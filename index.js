@@ -21,11 +21,22 @@ const app = express();
 
 const User = require('./models/User');
 
-// definir alguna ruta para la app
-app.get('/', (req, res) => {
+// definir las rutas
+app.get('/users', (req, res) => {
   User.find().exec((err, users) => {
     res.json(users);
   });
+});
+
+app.get('/users/:id', (req, res) => {
+  User.find({ id: req.params.id }).exec((err, user) => {
+    res.json(user);
+  });
+});
+
+// definir alguna ruta para la app
+app.get('/', (req, res) => {
+  res.send('Usa los endpoints /users o /users/id');
 });
 
 // decirle a la app que escuche en algun puerto

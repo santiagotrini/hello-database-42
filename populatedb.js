@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 
 // la URI de la db
-// const db = 'mongodb+srv://hellodb:<password>@cluster0-n6uib.mongodb.net/hellodb?retryWrites=true&w=majority';
-const db = 'mongodb://localhost/users';
+const db = 'mongodb+srv://hellodb:hellodb@cluster0.n6uib.mongodb.net/hellodb?retryWrites=true&w=majority';
+// const db = 'mongodb://localhost/users';
 
 // array de usuarios para ingresar a la db
 const users = [
