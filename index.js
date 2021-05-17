@@ -1,6 +1,7 @@
 // importar express
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // variables de config
 const port = process.env.PORT || 3000;
@@ -18,6 +19,8 @@ mongoose
 
 // crear objeto app
 const app = express();
+
+app.use(cors());
 
 const User = require('./models/User');
 
